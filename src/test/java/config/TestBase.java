@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class TestBase {
     private static WebDriver driver;
     private static WebDriverWait wait;
+    WebDriverWait explicitWait = new WebDriverWait(driver,10L);
 
     public static void createDriver() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -38,4 +39,5 @@ public class TestBase {
     public static WebDriverWait getWait() {
         return wait;
     }
+
 }

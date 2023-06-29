@@ -30,8 +30,8 @@ public class LoginStepDefinitions {
         loginPage.getLoginButton().click();
     }
 
-    @Then("the user is successfully logged in")
-    public void userIsLoggedIn() {
-        Assertions.assertEquals("You logged into a secure area!\n" + "×", loginPage.getMessage().getText());
+    @Then("the user receives the following message {string}")
+    public void userIsLoggedIn(String popUpMessage) {
+        Assertions.assertEquals(popUpMessage, loginPage.getMessage().getText());
     }
 }

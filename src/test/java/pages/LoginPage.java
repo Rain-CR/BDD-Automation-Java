@@ -21,6 +21,7 @@ public class LoginPage {
     @FindBy(id = "flash")
     private WebElement message;
 
+
     public LoginPage() {
         driver = TestBase.getDriver();
         PageFactory.initElements(driver, this);
@@ -45,4 +46,5 @@ public class LoginPage {
     public WebDriver getDriver() {
         return driver;
     }
+
 }
