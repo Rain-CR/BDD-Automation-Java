@@ -7,9 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class FormyCompleteWebFormPage {
-    private WebDriver driver;
-
-    @FindBy(xpath = "/html/body/div/div/li[14]/a")
+     @FindBy(linkText = "Complete Web Form")
     private WebElement completeWebForm;
 
     @FindBy(id = "first-name")
@@ -38,11 +36,10 @@ public class FormyCompleteWebFormPage {
 
     @FindBy(linkText = "Submit")
     private WebElement submitButton;
-    @FindBy(xpath = "/html/body/div/div")
+    @FindBy(xpath = "//*[@class='alert alert-success']")
     private WebElement submitMessage;
 
-    public FormyCompleteWebFormPage(){
-        driver = TestBase.getDriver();
+    public FormyCompleteWebFormPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
     public WebElement getCompleteWebForm() {return completeWebForm ;}
@@ -55,8 +52,5 @@ public class FormyCompleteWebFormPage {
     public WebElement getYearsExperienceSelectMenu(){return yearsExperienceSelectMenu;}
     public WebElement getDatePicker(){return datePicker;}
     public WebElement getSubmitButton(){return submitButton;}
-    public WebDriver getDriver() {
-        return driver;
-    }
     public WebElement getSubmitMessage(){return submitMessage;}
 }
